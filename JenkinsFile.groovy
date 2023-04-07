@@ -13,7 +13,7 @@ stage('Test nodejs node') {
             ])
 
         sh(script: "node hello_world.js");
-        sh(script: "python3 hello_world.py");
+        // sh(script: "python3 hello_world.py");
         
     }
 }
@@ -26,6 +26,6 @@ stage('Test python3 node') {
                 userRemoteConfigs: [[url: 'git@github.com:nawaphonOHM/ci-cd-play.git']]
             ])
         sh(script: "python3 hello_world.py");
-        sh(script: "node hello_world.js");
+        // sh(script: "node hello_world.js");
     }
 }
