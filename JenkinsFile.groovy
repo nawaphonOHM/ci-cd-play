@@ -6,7 +6,7 @@ stage('Test') {
 
 stage('Test nodejs node') {
     node('nodejs') {
-        step ("Clone Project") {
+        steps ("Clone Project") {
             checkout([
                 $class: 'GitSCM', 
                 branches: [[name: '*/main']], 
@@ -14,7 +14,7 @@ stage('Test nodejs node') {
             ])
         }
 
-        step ("Run build command") {
+        steps ("Run build command") {
             runNode();
         }
         
@@ -23,7 +23,7 @@ stage('Test nodejs node') {
 
 stage('Test python3 node') {
     node('python3') {
-        step ("Clone Project") {
+        steps ("Clone Project") {
             checkout([
                 $class: 'GitSCM', 
                 branches: [[name: '*/main']], 
@@ -31,7 +31,7 @@ stage('Test python3 node') {
             ])
         }
 
-        step ("Run build command") {
+        steps ("Run build command") {
             runPython();
         }
     }
