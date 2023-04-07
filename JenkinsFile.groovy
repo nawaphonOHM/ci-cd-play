@@ -12,7 +12,8 @@ stage('Test nodejs node') {
                 userRemoteConfigs: [[url: 'git@github.com:nawaphonOHM/ci-cd-play.git']]
             ])
 
-        echo sh(script: "node hello_world.js");
+        sh(script: "node hello_world.js");
+        sh(script: "python3 hello_world.py");
         
     }
 }
@@ -24,6 +25,7 @@ stage('Test python3 node') {
                 branches: [[name: '*/main']], 
                 userRemoteConfigs: [[url: 'git@github.com:nawaphonOHM/ci-cd-play.git']]
             ])
-        echo sh(script: "python3 hello_world.py");
+        sh(script: "python3 hello_world.py");
+        sh(script: "node hello_world.js");
     }
 }
