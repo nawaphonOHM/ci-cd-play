@@ -34,5 +34,5 @@ def runNode() {
 }
 
 def runPython() {
-    sh(script: "pip install --requirement requirements.txt --target ${env.WORKSPACE}");
+    sh(script: "pip install --requirement requirements.txt --target ${WORKSPACE}");
 }
