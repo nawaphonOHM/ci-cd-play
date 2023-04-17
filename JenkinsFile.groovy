@@ -6,34 +6,26 @@ stage('Test') {
 
 // stage('Test nodejs node') {
 //     node('nodejs') {
-//         steps ("Clone Project") {
-//             checkout([
+//         checkout([
 //                 $class: 'GitSCM', 
 //                 branches: [[name: '*/main']], 
 //                 userRemoteConfigs: [[url: 'git@github.com:nawaphonOHM/ci-cd-play.git']]
 //             ])
-//         }
 
-//         steps ("Run build command") {
-//             runNode();
-//         }
+//         runNode();
         
 //     }
 // }
 
 stage('Test python3 node') {
     node('python3') {
-        steps ("Clone Project") {
-            checkout([
+        checkout([
                 $class: 'GitSCM', 
                 branches: [[name: '*/main']], 
                 userRemoteConfigs: [[url: 'git@github.com:nawaphonOHM/ci-cd-play.git']]
             ])
-        }
 
-        steps ("Run build command") {
-            runPython();
-        }
+        runPython();
     }
 }
 
