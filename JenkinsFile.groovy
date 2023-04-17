@@ -29,6 +29,10 @@ stage('Test python3 node') {
     }
 }
 
+stage("Clean Workspace") {
+    cleanWs()
+}
+
 def runNode() {
     sh(script: "node hello_world.js");
 }
