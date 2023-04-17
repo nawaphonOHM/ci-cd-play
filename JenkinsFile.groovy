@@ -26,11 +26,8 @@ stage('Test python3 node') {
             ])
 
         runPython();
+        cleanWs()
     }
-}
-
-stage("Clean Workspace") {
-    cleanWs()
 }
 
 def runNode() {
